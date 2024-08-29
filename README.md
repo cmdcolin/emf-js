@@ -1,5 +1,5 @@
-[![NPM version](https://img.shields.io/npm/v/@gmod/bam.svg?style=flat-square)](https://npmjs.org/package/@gmod/bam)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/cmdcolin/emf-js/push.yml?branch=master)](https://github.com/cmdcolin/clustal-js/actions?query=branch%3Amaster+workflow%3APush+)
+[![NPM version](https://img.shields.io/npm/v/emf-js.svg?style=flat-square)](https://npmjs.org/package/emf-js)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/cmdcolin/emf-js/push.yml?branch=master)](https://github.com/cmdcolin/emf-js/actions?query=branch%3Amaster+workflow%3APush+)
 
 # emf-js
 

@@ -3,7 +3,7 @@ export interface Row {
   seq: string
 }
 
-export function parse(contents: string) {
+export function parseEmfAln(contents: string) {
   const lines = contents
     .split('\n')
     .map(f => f.trim())
@@ -42,4 +42,26 @@ export function parse(contents: string) {
     }
   }
   return arr
+}
+
+export function parseEmfTree(contents: string) {
+  const lines = contents
+    .split('\n')
+    .map(f => f.trim())
+    .filter(f => !!f)
+  const seqs = []
+  let tree = ''
+  for (const line of lines) {
+    if (line.startsWith('SEQ')) {
+      seqs.push(line)
+    } else if (line.startsWith('DATA')) {
+      continue
+    } else if (line.startsWith('//')) {
+      break
+    } else {
+      tree = line
+    }
+  }
+
+  return { tree, seqs }
 }

@@ -62,6 +62,20 @@ export function parseEmfTree(contents: string) {
       tree = line
     }
   }
+  const arr = seqs.map(s => {
+    const [, species, protein, chr, start, end, strand, geneId, unknown] =
+      s.split(' ')
+    return {
+      species,
+      protein,
+      chr,
+      start: +start,
+      end: +end,
+      strand: +strand,
+      geneId,
+      unknown,
+    }
+  })
 
-  return { tree, seqs }
+  return { tree, seqs: arr }
 }

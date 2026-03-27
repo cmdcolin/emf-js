@@ -12,15 +12,15 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.5.1",
-    "@typescript-eslint/eslint-plugin": "^8.1.0",
-    "@typescript-eslint/parser": "^8.1.0",
-    "eslint": "^9.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "eslint": "^9.39.4",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-unicorn": "^55.0.0",
+    "eslint-plugin-unicorn": "^64.0.0",
     "prettier": "^3.2.5",
     "rimraf": "^6.0.1",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.1.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.57.2",
     "vitest": "^2.0.5"
   },
   "scripts": {

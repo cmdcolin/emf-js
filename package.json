@@ -3,7 +3,10 @@
   "version": "2.0.0",
   "main": "dist/index.js",
   "module": "esm/index.js",
-  "repository": "cmdcolin/emf-js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmdcolin/emf-js.git"
+  },
   "files": [
     "dist",
     "esm",
@@ -29,7 +32,7 @@
     "lint": "eslint --report-unused-disable-directives --max-warnings 0",
     "build": "npm run build:esm && npm run build:es5",
     "build:esm": "tsc --outDir esm",
-    "build:es5": "tsc --module commonjs --outDir dist",
+    "build:es5": "tsc --module commonjs --moduleResolution bundler --outDir dist",
     "prebuild": "npm run clean",
     "preversion": "npm run lint && npm test && npm run build",
     "postversion": "git push --follow-tags"

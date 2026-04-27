@@ -1,5 +1,5 @@
 import eslint from '@eslint/js'
-import importPlugin from 'eslint-plugin-import'
+import importPlugin from 'eslint-plugin-import-x'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import tseslint from 'typescript-eslint'
 
@@ -50,9 +50,9 @@ export default tseslint.config(
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
       '@typescript-eslint/restrict-template-expressions': 'off',
       '@typescript-eslint/require-await': 'off',
-      'import/extensions': ['error', 'ignorePackages'],
-      'import/no-unresolved': 'off',
-      'import/order': [
+      'import-x/extensions': ['error', 'ignorePackages'],
+      'import-x/no-unresolved': 'off',
+      'import-x/order': [
         'error',
         {
           named: true,

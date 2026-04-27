@@ -28,9 +28,9 @@ export function parseEmfAln(contents: string) {
       species,
       protein,
       chr,
-      start: +start,
-      end: +end,
-      strand: +strand,
+      start: +start!,
+      end: +end!,
+      strand: +strand!,
       geneId,
       unknown,
       seq: '',
@@ -38,7 +38,7 @@ export function parseEmfAln(contents: string) {
   })
   for (const aln of alns) {
     for (let j = 0; j < seqs.length; j++) {
-      arr[j].seq += aln[j]
+      arr[j]!.seq += aln[j]!
     }
   }
   return arr
@@ -69,9 +69,9 @@ export function parseEmfTree(contents: string) {
       species,
       protein,
       chr,
-      start: +start,
-      end: +end,
-      strand: +strand,
+      start: +start!,
+      end: +end!,
+      strand: +strand!,
       geneId,
       unknown,
     }

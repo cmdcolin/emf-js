@@ -1,8 +1,12 @@
 {
   "name": "emf-js",
   "version": "2.0.0",
+  "type": "module",
   "main": "dist/index.js",
-  "module": "esm/index.js",
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./dist/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/cmdcolin/emf-js.git"
@@ -17,7 +21,7 @@
     "@types/node": "^25.5.0",
     "@typescript-eslint/eslint-plugin": "^8.57.2",
     "@typescript-eslint/parser": "^8.57.2",
-    "eslint": "^9.39.4",
+    "eslint": "^10.2.1",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-unicorn": "^64.0.0",
     "prettier": "^3.8.1",
@@ -27,17 +31,26 @@
     "vitest": "^4.1.2"
   },
   "scripts": {
+    "test": "vitest",
     "clean": "rimraf dist esm",
-    "test": "vitest run",
+    "format": "prettier --write .",
     "lint": "eslint --report-unused-disable-directives --max-warnings 0",
-    "build": "npm run build:esm && npm run build:es5",
+    "prebuild": "pnpm clean",
     "build:esm": "tsc --outDir esm",
     "build:es5": "tsc --module commonjs --moduleResolution bundler --outDir dist",
-    "prebuild": "npm run clean",
-    "preversion": "npm run lint && npm test && npm run build",
-    "postversion": "git push --follow-tags"
+    "postbuild:es5": "echo '{\"type\": \"commonjs\"}' > dist/package.json",
+    "preversion": "pnpm lint && pnpm test --run && pnpm build",
+    "postversion": "git push --follow-tags",
+    "build": "pnpm build:esm && pnpm build:es5"
   },
   "dependencies": {
     "@jbrowse/quick-lru": "^7.3.5"
+  },
+  "keywords": [
+    "bioinformatics"
+  ],
+  "author": {
+    "name": "Colin Diesh",
+    "email": "colin.diesh@gmail.com"
   }
 }

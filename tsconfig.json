@@ -1,16 +1,19 @@
 {
+  "include": ["src"],
   "compilerOptions": {
-    "target": "esnext",
-    "moduleResolution": "nodenext",
+    "target": "es2022",
     "module": "nodenext",
-    "declaration": true,
+    "moduleResolution": "nodenext",
+    "lib": ["esnext"],
+    "types": ["node"],
+    "rootDir": "src",
     "outDir": "dist",
-    "rootDir": "./src",
-    "strict": true,
+    "declaration": true,
     "sourceMap": true,
-    "esModuleInterop": true
-  },
-  "include": [
-    "src"
-  ]
+    "strict": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
 }
